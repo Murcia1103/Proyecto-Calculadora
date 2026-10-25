@@ -2,6 +2,12 @@
 
 Calculadora web educativa para practicar HTML, CSS, JavaScript y JSON. Incluye muro, viga, columna, contrapiso, techo, piso y pintura, además de registro e inicio de sesión local de demostración.
 
+## Información académica y autores
+
+Proyecto realizado en grupo por **Juan Sebastian Hernandez**, **Santiago Gutierrez Montealegre** y **Gabriel Gutierrez Murcia** para la materia **Interfaces I**, correspondiente al **segundo semestre de Ingeniería en Software**.
+
+**Docente:** Ingeniero Mauricio Rodriguez Bravo.
+
 ## Cómo abrir el proyecto
 
 Abre esta carpeta en Visual Studio Code y ejecuta `index.html` con Live Server. También puedes abrir una terminal dentro de esta carpeta y ejecutar:
