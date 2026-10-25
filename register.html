@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign Up - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <!-- Tarjeta de Registro -->
+        <div class="login-container register-container">
+        
+            <div class="logo-icon">
+                <i class="fa-solid fa-cube"></i>
+            </div>
+
+            <h2>Crear Cuenta</h2>
+            <p class="subtitle">Únete a BuildCalc hoy mismo</p>
+
+            <!-- Formulario -->
+            <form id="registro-form" action="#">
+            
+                <!-- Campo Nombre Completo -->
+                <div class="input-group">
+                    <label for="fullname">NOMBRE COMPLETO</label>
+                    <input type="text" id="fullname" placeholder="Ej. Juan Pérez" required>
+                </div>
+
+                <!-- Campo Usuario -->
+                <div class="input-group">
+                    <label for="username">USUARIO</label>
+                    <input type="text" id="username" placeholder="Ej. juanperez_99" required>
+                </div>
+
+                <!-- Campo Correo -->
+                <div class="input-group">
+                    <label for="email">CORREO ELECTRÓNICO</label>
+                    <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <!-- Campo Contraseña -->
+                <div class="input-group">
+                    <label for="password">CONTRASEÑA</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="••••••••••••" required>
+                            <button type="button" class="toggle-password" id="btn-toggle-pass">
+                            <i class="fa-solid fa-eye"></i>
+                            </button>
+                    </div>
+                </div>
+
+                <!-- Campo Confirmar Contraseña -->
+                <div class="input-group">
+                    <label for="confirm-password">CONFIRMAR CONTRASEÑA</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirm-password" placeholder="••••••••••••" required>
+                        <button type="button" class="toggle-password" id="btn-toggle-confirm">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <!-- Mensaje de error si las contraseñas no coinciden -->
+                    <p id="password-error" class="caps-warning" style="display: none;">Las contraseñas no coinciden</p>
+                </div>
+
+                <!-- Simulador de reCAPTCHA -->
+                <div class="recaptcha-mock">
+                    <div class="recaptcha-checkbox">
+                        <input type="checkbox" id="robot-check" required>
+                        <label for="robot-check">No soy un robot</label>
+                    </div>
+                    <div class="recaptcha-logo">
+                        <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
+                        <span>reCAPTCHA</span>
+                    </div>
+                </div>
+
+                <!-- Botón principal -->
+                <button type="submit" class="btn-login">Registrarse</button>
+            </form>
+        </div>
+
+        <!-- Enlace para volver al login -->
+        <div class="register-link">
+            <p>¿Ya tienes una cuenta? <a href="index.html">Inicia sesión aquí</a></p>
+        </div>
+
+        <footer class="footer-text">
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Políticas de Privacidad</a></p>
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <script src="JS/register.js"></script>
+    </body>
+</html>

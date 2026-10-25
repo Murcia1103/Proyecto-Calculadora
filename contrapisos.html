@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Contrapisos - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <div class="login-container menu-container dimensions-card">
+        
+            <!-- Encabezado regresa al menú -->
+            <header class="menu-header">
+                <a href="menu.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <div class="split-layout">
+            
+                <!-- Teclado funcional -->
+                <div class="left-panel">
+                    <div class="keypad">
+                        <button class="key-btn" onclick="escribir('1')">1</button>
+                        <button class="key-btn" onclick="escribir('2')">2</button>
+                        <button class="key-btn" onclick="escribir('3')">3</button>
+                        <button class="key-btn" onclick="escribir('4')">4</button>
+                        <button class="key-btn" onclick="escribir('5')">5</button>
+                        <button class="key-btn" onclick="escribir('6')">6</button>
+                        <button class="key-btn" onclick="escribir('7')">7</button>
+                        <button class="key-btn" onclick="escribir('8')">8</button>
+                        <button class="key-btn" onclick="escribir('9')">9</button>
+                        <button class="key-btn dark-key" onclick="escribir('.')"><i class="fa-solid fa-circle-dot"></i></button>
+                        <button class="key-btn" onclick="escribir('0')">0</button>
+                        <button class="key-btn dark-key" onclick="borrar()"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                
+                    <!-- Botón que llevará a los resultados del contrapiso -->
+                    <a href="resultado-contrapiso.html" class="btn-calcular" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">CALCULAR</a>
+                </div>
+
+                <div class="right-panel">
+                    <div class="right-titles">
+                        <h1 class="main-title title-right">CONTRAPISOS</h1>
+                        <p class="subtitle-question title-right">LARGO Y ANCHO EN (m); ESPESOR EN (cm)</p>
+                    </div>
+
+                    <div class="inputs-section">
+                    
+                        <!-- Input 1: Largo -->
+                        <div class="input-group calc-input-group">
+                            <label for="largo-contrapiso">Largo (m)</label>
+                            <div class="custom-input-wrapper">
+                                <input type="text" inputmode="decimal" id="largo-contrapiso" placeholder="0.0">
+                                <span class="unit">metros</span>
+                            </div>
+                        </div>
+
+                        <!-- Input 2: Ancho -->
+                        <div class="input-group calc-input-group">
+                            <label for="ancho-contrapiso">Ancho (m)</label>
+                            <div class="custom-input-wrapper">
+                                <input type="text" inputmode="decimal" id="ancho-contrapiso" placeholder="0.0">
+                                <span class="unit">metros</span>
+                            </div>
+                        </div>
+
+                        <!-- Input 3: Espesor -->
+                        <div class="input-group calc-input-group">
+                            <label for="espesor-contrapiso">Espesor (cm)</label>
+                            <div class="custom-input-wrapper">
+                                <input type="text" inputmode="decimal" id="espesor-contrapiso" placeholder="0.0">
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <!-- Conectamos el script de los contrapisos -->
+        <script src="JS/comun.js"></script>
+    <script src="JS/contrapisos.js"></script>
+    </body>
+</html>

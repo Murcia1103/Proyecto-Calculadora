@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resultado Viga - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <div class="login-container menu-container results-card">
+        
+            <!-- Encabezado regresa a las dimensiones de la viga -->
+            <header class="menu-header">
+                <a href="viga-hormigon.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <!-- Títulos de la sección actualizados -->
+            <div class="right-titles">
+                <h1 class="main-title title-right">MATERIALES<br>NECESARIOS</h1>
+                <p class="subtitle-question title-right">PARA LA VIGA DE HORMIGÓN</p>
+            </div>
+
+            <!-- Caja de Resultados -->
+            <div class="results-section">
+            
+                <!-- ¡Aquí está el botón que se nos había perdido! -->
+                <a href="menu.html" class="btn-otro-calculo">HACER OTRO CÁLCULO</a>
+
+                <!-- Caja de Resultados -->
+                <div class="results-box">
+    
+                    <!-- Ítem 1: Cemento -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cube"></i> Cemento
+                        </div>
+                        <div class="item-value">
+                            <span id="res-viga-cemento">—</span> Kg
+                        </div>
+                    </div>
+
+                    <!-- Ítem 2: Arena -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-database"></i> Arena
+                        </div>
+                        <div class="item-value">
+                            <span id="res-viga-arena">—</span> m³
+                        </div>
+                    </div>
+
+                    <!-- Ítem 3: Piedra -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-mountain"></i> Piedra
+                        </div>
+                        <div class="item-value">
+                            <span id="res-viga-piedra">—</span> m³
+                        </div>
+                    </div>
+
+                    <!-- Ítem 4: Hierro De 8 -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cubes"></i> Hierro De 8
+                        </div>
+                        <div class="item-value">
+                            <span id="res-viga-hierro8">—</span> m
+                        </div>
+                    </div>
+
+                    <!-- Ítem 5: Hierro De 4 (Le ponemos la clase no-border al último) -->
+                    <div class="result-item no-border">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cubes"></i> Hierro De 4
+                        </div>
+                        <div class="item-value">
+                            <span id="res-viga-hierro4">—</span> m
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <script src="JS/comun.js"></script>
+    <script src="JS/viga.js"></script>
+</body>
+</html>

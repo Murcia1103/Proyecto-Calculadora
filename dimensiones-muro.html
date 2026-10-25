@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dimensiones - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <!-- Tarjeta Principal (Reutilizamos la clase del menú para que sea ancha) -->
+        <div class="login-container menu-container dimensions-card">
+        
+            <!-- Encabezado con botón de volver -->
+            <header class="menu-header">
+                <a href="muro-espesor.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <!-- Contenedor dividido en dos columnas -->
+            <div class="split-layout">
+            
+                <!-- COLUMNA IZQUIERDA: Teclado y Botón Calcular -->
+                <div class="left-panel">
+                    <div class="keypad">
+                        <button class="key-btn" onclick="escribir('1')">1</button>
+                        <button class="key-btn" onclick="escribir('2')">2</button>
+                        <button class="key-btn" onclick="escribir('3')">3</button>
+                        <button class="key-btn" onclick="escribir('4')">4</button>
+                        <button class="key-btn" onclick="escribir('5')">5</button>
+                        <button class="key-btn" onclick="escribir('6')">6</button>
+                        <button class="key-btn" onclick="escribir('7')">7</button>
+                        <button class="key-btn" onclick="escribir('8')">8</button>
+                        <button class="key-btn" onclick="escribir('9')">9</button>
+                        <!-- Al punto le mandamos un '.' -->
+                        <button class="key-btn dark-key" onclick="escribir('.')"><i class="fa-solid fa-circle-dot"></i></button>
+                        <button class="key-btn" onclick="escribir('0')">0</button>
+                        <!-- Al basurero le ponemos la función de borrar -->
+                        <button class="key-btn dark-key" onclick="borrar()"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                    <a href="resultado.html" class="btn-calcular" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">CALCULAR</a>
+                </div>
+
+                <!-- COLUMNA DERECHA: Títulos y Formularios -->
+                <div class="right-panel">
+                    <div class="right-titles">
+                        <h1 class="main-title title-right">DIMENSIONES<br>DEL MURO</h1>
+                        <p class="subtitle-question title-right">Y PARÁMETROS DE CONSTRUCCIÓN</p>
+                    </div>
+
+                    <div class="inputs-section">
+                        <!-- Input 1: Largo -->
+                        <div class="input-group calc-input-group">
+                            <label for="largo">Largo (m)</label>
+                            <div class="custom-input-wrapper">
+                                <input type="text" inputmode="decimal" id="largo" placeholder="0.0">
+                                <span class="unit">metros</span>
+                            </div>
+                        </div>
+
+                        <!-- Input 2: Ancho -->
+                        <div class="input-group calc-input-group">
+                            <label for="ancho">Altura (m)</label>
+                            <div class="custom-input-wrapper">
+                                <input type="text" inputmode="decimal" id="ancho" placeholder="0.0">
+                                <span class="unit">metros</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+    
+    <script src="JS/comun.js"></script>
+    <script src="JS/dimensiones.js"></script>
+    </body>
+</html>

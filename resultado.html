@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resultados - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <!-- Tarjeta Principal -->
+        <div class="login-container menu-container results-card">
+        
+            <!-- Encabezado con botón de volver (regresa a dimensiones) -->
+            <header class="menu-header">
+                <a href="dimensiones-muro.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <!-- Títulos de la sección (Alineados a la derecha) -->
+            <div class="right-titles">
+                <h1 class="main-title title-right">MATERIALES<br>NECESARIOS</h1>
+                <!-- El '20' tiene un span con ID para cambiarlo con JS luego -->
+                <p class="subtitle-question title-right">PARA EL MURO DE <span id="tipo-muro-titulo">20</span> CM DE ESPESOR</p>
+            </div>
+
+            <!-- Contenedor inferior: Botón y Caja de Resultados -->
+            <div class="results-section">
+            
+                <!-- Botón para reiniciar -->
+                <a href="menu.html" class="btn-otro-calculo">HACER OTRO CÁLCULO</a>
+
+                <!-- Caja oscura con la lista de materiales -->
+                <div class="results-box">
+                
+                    <!-- Ítem 1: Cemento -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cube"></i> Cemento
+                        </div>
+                        <div class="item-value">
+                            <!-- El número tiene un ID para inyectarle el resultado con JS -->
+                            <span id="res-cemento">—</span> Kg
+                        </div>
+                    </div>
+
+                    <!-- Ítem 2: Arena -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-database"></i> Arena
+                        </div>
+                        <div class="item-value">
+                            <span id="res-arena">—</span> m³
+                        </div>
+                    </div>
+
+                    <!-- Ítem 3: Ladrillos -->
+                    <div class="result-item no-border">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cubes"></i> Ladrillos
+                        </div>
+                        <div class="item-value">
+                            <span id="res-ladrillos">—</span> Und
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+
+        <!-- Agregamos el script aquí -->
+        <script src="JS/comun.js"></script>
+    <script src="JS/dimensiones.js"></script>
+
+    </body>
+</html>

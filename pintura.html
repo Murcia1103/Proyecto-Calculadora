@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pintura - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <div class="login-container menu-container dimensions-card">
+        
+            <!-- Encabezado regresa al menú -->
+            <header class="menu-header">
+                <a href="menu.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <div class="split-layout">
+            
+                <!-- Teclado interactivo -->
+                <div class="left-panel">
+                    <div class="keypad">
+                        <button class="key-btn" onclick="escribir('1')">1</button>
+                        <button class="key-btn" onclick="escribir('2')">2</button>
+                        <button class="key-btn" onclick="escribir('3')">3</button>
+                        <button class="key-btn" onclick="escribir('4')">4</button>
+                        <button class="key-btn" onclick="escribir('5')">5</button>
+                        <button class="key-btn" onclick="escribir('6')">6</button>
+                        <button class="key-btn" onclick="escribir('7')">7</button>
+                        <button class="key-btn" onclick="escribir('8')">8</button>
+                        <button class="key-btn" onclick="escribir('9')">9</button>
+                        <button class="key-btn dark-key" onclick="escribir('.')"><i class="fa-solid fa-circle-dot"></i></button>
+                        <button class="key-btn" onclick="escribir('0')">0</button>
+                        <button class="key-btn dark-key" onclick="borrar()"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                
+                    <!-- Botón que llevará a los resultados de pintura -->
+                    <a href="resultado-pintura.html" class="btn-calcular" style="display: flex; justify-content: center; align-items: center; text-decoration: none;">CALCULAR</a>
+                </div>
+
+                <div class="right-panel">
+                    <div class="right-titles">
+                        <!-- Títulos adaptados para Pintura -->
+                        <h1 class="main-title title-right">PINTURA</h1>
+                        <p class="subtitle-question title-right">INGRESE LA SUPERFICIE DEL MURO</p>
+                    </div>
+
+                    <div class="inputs-section">
+                    
+                        <!-- Único Input: Superficie -->
+                        <div class="input-group calc-input-group" style="margin-bottom: 0.5vh;">
+                            <label for="superficie-pintura">Superficie (m²)</label>
+                            <div class="custom-input-wrapper">
+                                <input type="text" inputmode="decimal" id="superficie-pintura" placeholder="0.0">
+                                <span class="unit">metro²</span>
+                            </div>
+                        </div>
+                    
+                        <!-- Texto informativo del rendimiento de la pintura -->
+                        <p style="color: rgba(255, 255, 255, 0.5); font-size: 1.2vmin; margin-top: 0; text-align: left; padding-left: 0.5vw; text-decoration: underline;">
+                            1 litro de pintura rinde por 6 m² de pared
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <!-- Conectamos el script de pintura -->
+        <script src="JS/comun.js"></script>
+    <script src="JS/pintura.js"></script>
+    </body>
+</html>

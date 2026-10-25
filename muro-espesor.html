@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Espesor del Muro - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <!-- Tarjeta Principal (Reutilizamos la clase del menú para el ancho) -->
+        <div class="login-container menu-container">
+        
+            <!-- Encabezado con botón de volver -->
+            <header class="menu-header">
+                <!-- Este botón regresa al menú principal -->
+                <a href="menu.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <!-- Títulos de la sección -->
+            <div class="section-titles">
+                <h1 class="main-title">MURO DE<br>LADRILLO</h1>
+                <p class="subtitle-question">¿De qué espesor es el muro?</p>
+            </div>
+
+            <!-- Cuadrícula de opciones (2 columnas) -->
+            <div class="options-grid">
+                <!-- Opción 1: 20 cm -->
+                <div class="option-card">
+                    <h3>Muro de<br>20 cm</h3>
+                    <button onclick="guardarEspesor(20)" class="btn-seleccionar" style="border: none; cursor: pointer;">Seleccionar</button>
+                </div>
+
+                <!-- Opción 2: 30 cm -->
+                <div class="option-card">
+                    <h3>Muro de<br>30 cm</h3>
+                    <button onclick="guardarEspesor(30)" class="btn-seleccionar" style="border: none; cursor: pointer;">Seleccionar</button>
+                </div>
+
+            </div>  
+
+        </div>
+
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <!-- Agregamos el script aquí -->
+        <script src="JS/comun.js"></script>
+    <script src="JS/dimensiones.js"></script>
+
+    </body>
+</html>

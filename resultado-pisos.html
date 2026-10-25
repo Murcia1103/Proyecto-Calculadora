@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resultado pisos - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <div class="login-container menu-container results-card">
+        
+            <!-- Encabezado regresa a las dimensiones de los pisos -->
+            <header class="menu-header">
+                <a href="pisos.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <!-- Títulos de la sección corregidos -->
+            <div class="right-titles">
+                <h1 class="main-title title-right">MATERIALES<br>NECESARIOS</h1>
+                <!-- Corregido el error de diseño: ahora dice PISOS -->
+                <p class="subtitle-question title-right">PARA LOS PISOS</p>
+            </div>
+
+            <!-- Caja de Resultados -->
+            <div class="results-section">
+            
+                <!-- Botón para regresar al menú principal -->
+                <a href="menu.html" class="btn-otro-calculo">HACER OTRO CÁLCULO</a>
+
+                <!-- Lista de Resultados -->
+                <div class="results-box">
+                
+                    <!-- Superficie (Sin icono según el diseño) -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            Superficie
+                        </div>
+                        <div class="item-value">
+                            <span id="res-piso-superficie">—</span> m²
+                        </div>
+                    </div>
+
+                    <!-- Total con el 10% adicional -->
+                    <div class="result-item no-border">
+                        <div class="item-name">
+                            <i class="fa-solid fa-database"></i> Total con 10% adicional
+                        </div>
+                        <div class="item-value">
+                            <span id="res-piso-10">—</span> m²
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <script src="JS/comun.js"></script>
+    <script src="JS/pisos.js"></script>
+</body>
+</html>

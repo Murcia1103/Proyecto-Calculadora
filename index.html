@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Log in - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <!-- El fondo de la página -->
+        <div class="background-image"></div>
+
+        <!-- El contenedor del formulario (la tarjeta transparente) -->
+        <div class="login-container">
+        
+            <!-- Icono/Logo con Font Awesome -->
+            <div class="logo-icon">
+                <i class="fa-solid fa-cube"></i>
+            </div>
+
+            <!-- Títulos -->
+            <h2>Iniciar Sesión</h2>
+            <p class="subtitle">Calculadora de Materiales BuildCalc</p>
+
+            <!-- Formulario -->
+            <form action="/menu.html">
+                <!-- Campo Usuario -->
+                <div class="input-group">
+                    <label for="username">USUARIO</label>
+                    <input type="text" id="username" placeholder="Tu nombre de usuario" required>
+                </div>
+
+            <!-- Campo Contraseña (Actualizado) -->
+                <div class="input-group">
+                    <label for="password">CONTRASEÑA</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="••••••••••••" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fa-solid fa-eye"></i> <!-- Usando FontAwesome para el ojito -->
+                        </button>
+                    </div>
+                    <!-- Mensaje de Bloq Mayús (Oculto por defecto) -->
+                    <p id="caps-warning" class="caps-warning" style="display: none;">⚠️ Bloq Mayús activado</p>
+                </div>
+
+            <!-- Opciones extra: Recordarme, Olvidaste contraseña y Recuperar Usuario -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox"> Recordarme
+                    </label>
+                    <div class="recovery-links">
+                        <a href="recuperar-password.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+
+            <!-- Botón principal -->
+                        <button type="submit" class="btn-login"> Iniciar Sesión</button> 
+            </form>
+        </div>
+
+        <!-- Enlace de registro (Crear cuenta) -->
+        <div class="register-link">
+            <p>¿No estás registrado? <a href="register.html">Regístrate aquí</a></p>
+        </div>
+
+        <!-- Footer: Términos y copyright -->
+        <footer class="footer-text">
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Políticas de Privacidad</a></p>
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <!-- Aquí irá nuestro JavaScript -->
+        <script src="JS/login.js"></script>       
+</body>
+</html>

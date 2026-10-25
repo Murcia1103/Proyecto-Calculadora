@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resultados Techos - BuildCalc</title>
+        <meta name="author" content="Gabriel Gutiérrez Murcia - G Murcia">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="shortcut icon" href="IMG/BuildCalc LOGO.PNG"> 
+        <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <div class="login-container menu-container results-card">
+        
+            <!-- Encabezado regresa a las dimensiones de los techos -->
+            <header class="menu-header">
+                <a href="techos.html" class="btn-volver">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <div class="logo-icon small-menu-logo">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+            </header>
+
+            <!-- Títulos de la sección actualizados -->
+            <div class="right-titles">
+                <h1 class="main-title title-right">MATERIALES<br>NECESARIOS</h1>
+                <p class="subtitle-question title-right">PARA LOS TECHOS</p>
+            </div>
+
+            <!-- Caja de Resultados -->
+            <div class="results-section">
+            
+                <!-- Botón para regresar al menú principal -->
+                <a href="menu.html" class="btn-otro-calculo">HACER OTRO CÁLCULO</a>
+
+                <!-- Lista de Materiales -->
+                <div class="results-box">
+                
+                    <!-- Cemento -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cube"></i> Cemento
+                        </div>
+                        <div class="item-value">
+                            <span id="res-techo-cemento">—</span> Kg
+                        </div>
+                    </div>
+
+                    <!-- Arena -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-database"></i> Arena
+                        </div>
+                        <div class="item-value">
+                            <span id="res-techo-arena">—</span> m³
+                        </div>
+                    </div>
+
+                    <!-- Piedra -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-mountain"></i> Piedra
+                        </div>
+                        <div class="item-value">
+                            <span id="res-techo-piedra">—</span> m³
+                        </div>
+                    </div>
+
+                    <!-- Hierro De 8 -->
+                    <div class="result-item">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cubes"></i> Hierro De 8
+                        </div>
+                        <div class="item-value">
+                            <span id="res-techo-hierro8">—</span> m
+                        </div>
+                    </div>
+
+                    <!-- Hierro De 6 (Lleva la clase no-border por ser el último) -->
+                    <div class="result-item no-border">
+                        <div class="item-name">
+                            <i class="fa-solid fa-cubes"></i> Hierro De 6
+                        </div>
+                        <div class="item-value">
+                            <span id="res-techo-hierro6">—</span> m
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer-text">
+            <p>gmurcia &copy; 2026</p>
+        </footer>
+
+        <script src="JS/comun.js"></script>
+    <script src="JS/techos.js"></script>
+</body>
+</html>

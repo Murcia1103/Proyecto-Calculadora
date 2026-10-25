@@ -1,0 +1,716 @@
+/* --- ESTILOS GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Puedes cambiar la fuente después */
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* ELIMINAMOS el linear-gradient y AGREGAMOS la url de tu imagen */
+    background-image: url('/IMG/Fondo.png'); 
+    
+    /* Estas propiedades aseguran que la imagen se vea perfecta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+/* --- TARJETA DE INICIO DE SESIÓN (Efecto Cristal) --- */
+.login-container {
+    background: rgba(235, 230, 220, 0.85); /* Color crema semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+    -webkit-backdrop-filter: blur(10px); /* Para Safari */
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+/* --- LOGO Y TÍTULOS --- */
+.logo-icon {
+    background-color: #6d625b; /* Marrón grisáceo oscuro */
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px auto;
+    color: white;
+}
+
+.logo-icon i {
+    font-size: 28px; 
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+
+
+/* --- FORMULARIO Y CAMPOS --- */
+form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente */
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/* Contenedor relativo para el icono del ojito */
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+
+
+/* --- OPCIONES (Recordarme / Olvidé contraseña) --- */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #666;
+    text-decoration: underline;
+}
+
+
+
+/* Advertencia de Mayúsculas */
+.caps-warning {
+    color: #c93b3b; /* Rojo sutil */
+    font-size: 11px;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+
+
+/* Agrupar los enlaces de recuperación a la derecha */
+.recovery-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px; /* Espacio entre los dos enlaces */
+}
+
+.recover-user {
+    color: #666;
+    text-decoration: underline;
+    font-size: 11px; /* Un poco más pequeño para jerarquía */
+}
+
+
+
+/* --- BOTÓN PRINCIPAL --- */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background-color: #7b6d65; /* Marrón a juego con el logo */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #5f544e;
+}
+
+
+
+/* --- ENLACE DE REGISTRO (Fuera de la tarjeta) --- */
+.register-link {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7); /* Blanco semitransparente para que contraste con la zona oscura del fondo */
+    font-size: 13px;
+    z-index: 10;
+}
+
+.register-link a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Footer (Términos y Copyright) */
+.footer-text {
+    margin-top: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    z-index: 10;
+}
+
+.footer-text p {
+    margin: 5px 0;
+}
+
+.footer-text a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-text a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+/* --- ESTILOS EXTRA PARA EL REGISTRO --- */
+
+/* En el registro hay más campos, así que reducimos un poco el margen para que quepa bien en la pantalla */
+.register-container .input-group {
+    margin-bottom: 1.5vh;
+}
+
+/* Diseño visual del "Falso" reCAPTCHA */
+.recaptcha-mock {
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    border-radius: 0.5vh;
+    padding: 1.5vh 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5vh;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+}
+
+.recaptcha-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    font-size: 1.4vmin;
+    color: #555;
+    font-weight: 500;
+}
+
+.recaptcha-checkbox input {
+    width: 2.5vmin;
+    height: 2.5vmin;
+    cursor: pointer;
+}
+
+.recaptcha-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9vmin;
+    color: #999;
+}
+
+.recaptcha-logo img {
+    width: 3.5vmin;
+    margin-bottom: 0.3vh;
+}
+
+
+
+/* =========================================
+   ESTILOS PARA EL MENÚ PRINCIPAL (menu.html)
+   ========================================= */
+
+/* Hacemos la tarjeta más ancha para el menú */
+.menu-container {
+    max-width: 55vw; /* Más ancha que el login (que era 25vw) */
+    padding: 4vh 4vw;
+}
+
+/* Encabezado (Botón salir y Logo) */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+/* Botón de Salir (Estilo píldora oscura como en la imagen) */
+.btn-salir {
+    background-color: #3b3a3d;
+    color: white;
+    text-decoration: none;
+    padding: 1vh 1.5vw;
+    border-radius: 2vh; /* Bordes muy redondeados */
+    font-size: 1.2vmin;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    transition: background-color 0.3s ease;
+}
+
+.btn-salir:hover {
+    background-color: #222124;
+}
+
+/* Logo pequeño del menú */
+.small-menu-logo {
+    width: 5vmin;
+    height: 5vmin;
+    margin: 0; /* Quitamos el margen automático para que se quede a la derecha */
+    border-radius: 1vmin;
+}
+
+.small-menu-logo i {
+    font-size: 2.5vmin;
+}
+
+/* Título y línea separadora */
+.menu-title {
+    font-size: 3vmin;
+    margin-bottom: 1.5vh;
+}
+
+.menu-divider {
+    border: none;
+    border-top: 0.15vh solid rgba(0, 0, 0, 0.1); /* Línea sutil */
+    margin-bottom: 4vh;
+}
+
+/* Cuadrícula de botones (2 columnas) */
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas del mismo tamaño */
+    gap: 2.5vh 2vw; /* Espacio entre botones */
+}
+
+/* Estilo de los botones de cálculo */
+.calc-btn {
+    background-color: rgba(123, 109, 101, 0.9); /* Marrón base */
+    color: white;
+    border: none;
+    border-radius: 1.5vh;
+    padding: 3vh 1vw;
+    font-size: 1.6vmin;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw; /* Espacio entre el icono y el texto */
+    transition: all 0.3s ease;
+    box-shadow: 0 0.5vh 1vh rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+
+/* Efecto hover interactivo */
+.calc-btn:hover {
+    background-color: rgba(95, 84, 78, 1);
+    transform: translateY(-0.3vh); /* Se levanta un poquito al pasar el mouse */
+    box-shadow: 0 1vh 1.5vh rgba(0,0,0,0.2);
+}
+
+/* Íconos dentro de los botones un poco más grandes */
+.calc-btn i {
+    font-size: 2vmin;
+}
+
+/* Diferenciamos sutilmente el botón de ajustes */
+.btn-ajustes {
+    background-color: rgba(100, 90, 85, 0.8);
+}
+
+
+
+/* =========================================
+   ESTILOS PARA OPCIONES DE CÁLCULO (muro-espesor.html)
+   ========================================= */
+
+/* Botón de volver (Solo la flecha, circular) */
+.btn-volver {
+    background-color: #3b3a3d;
+    color: white;
+    text-decoration: none;
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 50%; /* Lo hace un círculo perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vmin;
+    transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #222124;
+}
+
+/* Títulos principales de la sección */
+.section-titles {
+    margin-bottom: 4vh;
+}
+
+.main-title {
+    font-size: 4vmin;
+    font-weight: 800;
+    color: #1a1e29;
+    line-height: 1.1; /* Reduce el espacio entre las líneas del texto */
+    margin-bottom: 1vh;
+}
+
+.subtitle-question {
+    font-size: 1.8vmin;
+    color: #666;
+}
+
+/* Cuadrícula para las tarjetas de opciones */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+}
+
+/* Tarjetas grandes de selección (Marrones) */
+.option-card {
+    background-color: rgba(123, 109, 101, 0.9);
+    border-radius: 2vh;
+    padding: 4vh 3vw;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 20vh; /* Altura mínima para que se vean grandes */
+    transition: all 0.3s ease;
+    box-shadow: 0 0.5vh 1vh rgba(0,0,0,0.15);
+}
+
+.option-card h3 {
+    color: white;
+    font-size: 3vmin;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Efecto hover interactivo para toda la tarjeta */
+.option-card:hover {
+    transform: translateY(-0.5vh);
+    box-shadow: 0 1.5vh 2.5vh rgba(0,0,0,0.25);
+    background-color: rgba(105, 93, 86, 1);
+}
+
+/* Botón blanco interior ("Seleccionar") */
+.btn-seleccionar {
+    background-color: white;
+    color: #4a413d;
+    font-size: 1.4vmin;
+    font-weight: 700;
+    padding: 1vh 1.5vw;
+    border-radius: 2vh;
+    align-self: flex-start; /* Alinea el botón a la izquierda */
+    margin-top: 3vh;
+    text-decoration: none; 
+    display: inline-block;
+}
+
+.btn-seleccionar:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+/* =========================================
+   ESTILOS PARA DIMENSIONES (dimensiones-muro.html)
+   ========================================= */
+
+/* Hacemos la tarjeta un poco más alta si es necesario */
+.dimensions-card {
+    padding-bottom: 5vh;
+}
+
+/* Layout dividido en dos columnas */
+.split-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alinea los elementos hacia abajo */
+    gap: 4vw;
+    margin-top: 2vh;
+}
+
+.left-panel {
+    width: 40%;
+}
+
+.right-panel {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- ESTILOS DEL TECLADO --- */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas del mismo tamaño */
+    gap: 1.5vh 1vw;
+    margin-bottom: 3vh;
+}
+
+.key-btn {
+    background-color: rgba(123, 109, 101, 0.8);
+    color: white;
+    border: none;
+    border-radius: 1.5vh;
+    padding: 2vh 0;
+    font-size: 2vmin;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.key-btn:hover {
+    background-color: rgba(95, 84, 78, 1);
+}
+
+.dark-key {
+    background-color: #3b3a3d; /* Color oscuro para el punto y borrar */
+}
+
+.dark-key:hover {
+    background-color: #222124;
+}
+
+/* Botón Calcular grande */
+.btn-calcular {
+    width: 100%;
+    background-color: #3b3a3d;
+    color: white;
+    border: none;
+    border-radius: 1.5vh;
+    padding: 2vh 0;
+    font-size: 1.6vmin;
+    font-weight: 700;
+    letter-spacing: 0.1vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-calcular:hover {
+    background-color: #222124;
+    transform: translateY(-0.3vh);
+}
+
+/* --- ESTILOS DE LA COLUMNA DERECHA --- */
+.right-titles {
+    text-align: right; /* Alinea el texto a la derecha */
+    margin-bottom: 5vh;
+}
+
+.title-right {
+    text-align: right;
+}
+
+.inputs-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.calc-input-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.4vmin;
+    margin-bottom: 0.5vh;
+    display: block;
+}
+
+/* Contenedor especial para el input y la palabra "metros" */
+.custom-input-wrapper {
+    background-color: rgba(123, 109, 101, 0.7);
+    border-radius: 1.5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5vw;
+    border: 0.2vh solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al hacer clic en el input */
+.custom-input-wrapper:focus-within {
+    border-color: #3b3a3d;
+    background-color: rgba(123, 109, 101, 0.9);
+}
+
+/* El input transparente dentro de la caja marrón */
+.custom-input-wrapper input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2.5vmin;
+    font-weight: 600;
+    padding: 2vh 0;
+    width: 70%;
+    outline: none; /* Quita el borde azul por defecto */
+}
+
+/* Cambia el color del "placeholder" (los ceros por defecto) */
+.custom-input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* La palabra "metros" */
+.custom-input-wrapper .unit {
+    color: white;
+    font-size: 1.5vmin;
+    font-weight: 500;
+}
+
+
+
+/* =========================================
+   ESTILOS PARA RESULTADOS (resultado.html)
+   ========================================= */
+
+/* Ajuste de padding para la tarjeta de resultados */
+.results-card {
+    padding-bottom: 5vh;
+}
+
+/* Sección inferior donde van el botón y la caja oscura */
+.results-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    margin-top: 2vh;
+}
+
+/* Botón "Hacer otro cálculo" */
+.btn-otro-calculo {
+    background-color: #3b3a3d;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4vmin;
+    font-weight: 700;
+    padding: 1.5vh 1.5vw;
+    border-radius: 1.5vh;
+    margin-bottom: 2vh; /* Espacio entre el botón y la caja de resultados */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-otro-calculo:hover {
+    background-color: #222124;
+    transform: translateY(-0.2vh);
+}
+
+/* Caja oscura de resultados */
+.results-box {
+    background-color: #3b3a3d;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border-radius: 1.5vh;
+    padding: 1vh 3vw;
+    box-sizing: border-box; /* Asegura que el padding no desborde la caja */
+    box-shadow: 0 0.5vh 1vh rgba(0,0,0,0.2);
+}
+
+/* Cada fila de la lista de resultados */
+.result-item {
+    display: flex;
+    justify-content: space-between; /* Texto a la izq, números a la der */
+    align-items: center;
+    padding: 2.5vh 0;
+    border-bottom: 0.1vh solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+    color: white;
+    font-size: 1.6vmin;
+}
+
+/* Clase para quitarle la línea al último elemento */
+.result-item.no-border {
+    border-bottom: none;
+}
+
+/* Estilos de los textos y números interiores */
+.item-name {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    font-weight: 600;
+}
+
+.item-name i {
+    font-size: 2vmin;
+    opacity: 0.8;
+}
+
+.item-value {
+    font-weight: 700;
+    letter-spacing: 0.05vw;
+}
