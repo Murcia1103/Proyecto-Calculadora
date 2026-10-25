@@ -33,9 +33,6 @@ Los resultados y usuarios de demostración se guardan en el almacenamiento del n
 
 Los subprogramas comunes `calcularSuperficie(largo, ancho)` y `calcularVolumen(largo, ancho, espesor)` están dentro de `JS/comun.js`. Los usan los cálculos de muro, contrapiso, techo y piso; no aparecen como opciones para el usuario en el menú.
 
-## Aclaración sobre piedra
-
-En la consigna, la piedra para vigas y columnas aparece con unidad m². Como la cantidad de agregado se expresa como volumen, BuildCalc conserva los coeficientes numéricos (0.02 y 0.016) pero muestra y guarda piedra en m³. Conviene confirmarle al profesor que se interpretó m³ como la unidad correcta.
 
 ## Acceso de demostración y límites
 
