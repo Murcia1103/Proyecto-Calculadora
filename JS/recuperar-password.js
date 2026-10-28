@@ -1,19 +1,25 @@
-// Simulación local: no se envían correos ni se restablece una contraseña real.
+// Demostración: consulta el endpoint, pero no envía correos ni cambia contraseñas.
 document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById("recover-form");
     const mensaje = document.getElementById("success-message");
     const campoCorreo = document.getElementById("email");
 
     if (!formulario) return;
-    formulario.addEventListener("submit", function (evento) {
+    formulario.addEventListener("submit", async function (evento) {
         evento.preventDefault();
         const correo = campoCorreo.value.trim().toLowerCase();
-        const usuarios = JSON.parse(localStorage.getItem("buildcalc.usuarios") || "[]");
-        const existe = usuarios.some(function (usuario) { return usuario.correo === correo; });
 
-        mensaje.textContent = existe
-            ? "Cuenta encontrada. La recuperación de correo es solo una simulación en esta versión."
-            : "No encontramos una cuenta local con ese correo.";
+        try {
+            const respuesta = await fetch("/api/auth/recovery-check", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ correo: correo })
+            });
+            const resultado = await respuesta.json();
+            mensaje.textContent = resultado.mensaje || "Esta demo no restablece contraseñas.";
+        } catch (error) {
+            mensaje.textContent = "No se pudo contactar al servidor. Inicia BuildCalc con npm start.";
+        }
         mensaje.style.display = "block";
     });
 });

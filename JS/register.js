@@ -1,13 +1,4 @@
-// Registro local para la demostración académica (no hay servidor).
-function calcularHashRegistro(texto) {
-    const datos = new TextEncoder().encode(texto);
-    return crypto.subtle.digest("SHA-256", datos).then(function (resultado) {
-        return Array.from(new Uint8Array(resultado)).map(function (byte) {
-            return byte.toString(16).padStart(2, "0");
-        }).join("");
-    });
-}
-
+// El servidor valida los datos, guarda la cuenta y crea la sesión.
 document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById("registro-form");
     const entradaClave = document.getElementById("password");
@@ -37,34 +28,31 @@ document.addEventListener("DOMContentLoaded", function () {
         const correo = document.getElementById("email").value.trim().toLowerCase();
 
         if (entradaClave.value !== confirmarClave.value) {
+            errorClave.textContent = "Las contraseñas no coinciden";
+            errorClave.style.display = "block";
+            return;
+        }
+        if (entradaClave.value.length < 8) {
+            errorClave.textContent = "La contraseña debe tener al menos 8 caracteres.";
             errorClave.style.display = "block";
             return;
         }
         errorClave.style.display = "none";
 
-        const usuarios = JSON.parse(localStorage.getItem("buildcalc.usuarios") || "[]");
-        const existe = usuarios.some(function (item) {
-            return item.correo === correo || item.usuario.toLowerCase() === usuario.toLowerCase();
-        });
-        if (existe) {
-            alert("Ese correo o nombre de usuario ya está registrado.");
-            return;
+        try {
+            const respuesta = await fetch("/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nombre: nombre, usuario: usuario, correo: correo, clave: entradaClave.value })
+            });
+            const resultado = await respuesta.json();
+            if (!respuesta.ok) {
+                alert(resultado.mensaje || "No se pudo crear la cuenta.");
+                return;
+            }
+            window.location.href = "menu.html";
+        } catch (error) {
+            alert("No se pudo contactar al servidor. Inicia BuildCalc con npm start.");
         }
-
-        if (!window.crypto || !crypto.subtle) {
-            alert("Para registrarte, abre el proyecto con Live Server o localhost.");
-            return;
-        }
-
-        const hash = await calcularHashRegistro(entradaClave.value);
-        usuarios.push({
-            nombre: nombre,
-            usuario: usuario,
-            correo: correo,
-            claveHash: hash
-        });
-        localStorage.setItem("buildcalc.usuarios", JSON.stringify(usuarios));
-        sessionStorage.setItem("buildcalc.usuarioActivo", usuario);
-        window.location.href = "menu.html";
     });
 });
